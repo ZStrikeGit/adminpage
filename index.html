@@ -1,0 +1,63 @@
+
+<html>
+    <head>
+      <style>
+        .centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+      </style>
+      <title>Login Page</title>
+    </head>
+   <body id="body">
+    <div class="centered">
+      <h1>Login Page</h1>
+      <a href="https://forms.gle/DRZpYeNxiZ7Et81a6" target="_blank">Register Account</a>
+      <input id="usr" type="text" value="ID">
+      <input id="pwd" type="password" value="Passcode"><br>
+      <button id="login" onclick="login()" style="background-color:white">Login</button>
+   <script>
+     const options = {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify(`"user": "${usr.value}","password": "${pwd.value}"`)
+};
+  var usr = document.getElementById("usr");
+  var pwd = document.getElementById("pwd");
+
+  function login(e) {
+  if (e != undefined) {
+    if (e.code == "Enter") {
+      fetch("https://login.bubble.imfrost.cf", options)
+    }
+  } else {
+
+    fetch("https://login.bubble.imfrost.cf", options)
+  }
+  window.addEventListener('keypress', login(e));
+
+     /*
+          var usr = document.getElementById("usr")
+    var pwd = document.getElementById("pwd")
+    var cock = document.getElementById("cock")
+    var login = document.getElementById("login")
+    function shit() {
+    if (pwd.value !== "bru") {
+    cock.style="background-color:light-red"
+     window.alert("WRONG PASSWORD, OWNER HAS BEEN ALERTED");
+    } else if (pwd.value == "givemehentai") {
+    window.replace("https://demo.filestash.app")
+    }
+    }
+        */
+  }
+  </script>
+    </div>
+  </body>
+  </html>
